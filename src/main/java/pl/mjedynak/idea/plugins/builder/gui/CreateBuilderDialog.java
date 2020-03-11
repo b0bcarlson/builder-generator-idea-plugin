@@ -205,6 +205,7 @@ public class CreateBuilderDialog extends DialogWrapper {
             }
         });
         panel.add(innerBuilder, gbConstraints);
+        innerBuilder.doClick(10);
         // Inner builder
 
 
