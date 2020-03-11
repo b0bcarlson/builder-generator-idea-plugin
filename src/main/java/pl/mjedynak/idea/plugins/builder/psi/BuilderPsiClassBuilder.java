@@ -24,7 +24,7 @@ import static com.intellij.openapi.util.text.StringUtil.isVowel;
 
 public class BuilderPsiClassBuilder {
 
-    private static final String PRIVATE_STRING = "private";
+    private static final String PUBLIC_STRING = "public";
     private static final String SPACE = " ";
     private static final String A_PREFIX = " a";
     private static final String AN_PREFIX = " an";
@@ -110,16 +110,12 @@ public class BuilderPsiClassBuilder {
         } else {
             constructor = elementFactory.createConstructor();
         }
-        constructor.getModifierList().setModifierProperty(PRIVATE_STRING, true);
+        constructor.getModifierList().setModifierProperty(PUBLIC_STRING, true);
         builderClass.add(constructor);
         return this;
     }
 
     public BuilderPsiClassBuilder withInitializingMethod() {
-        String prefix = isVowel(srcClassName.toLowerCase(Locale.ENGLISH).charAt(0)) ? AN_PREFIX : A_PREFIX;
-        PsiMethod staticMethod = elementFactory.createMethodFromText(
-                "public static " + builderClassName + prefix + srcClassName + "() { return new " + builderClassName + "(); }", srcClass);
-        builderClass.add(staticMethod);
         return this;
     }
 
