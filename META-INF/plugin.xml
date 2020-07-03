@@ -20,9 +20,14 @@
           </ul>
         ]]>
     </description>
-    <version>1.1.7</version>
+    <version>1.1.8</version>
     <change-notes>
         <![CDATA[
+           version 1.1.8
+           <br/>
+           <ul>
+           <li>Fix compatibility issue with IDEA 2020.1 (<a href="https://github.com/mjedynak/builder-generator-idea-plugin/issues/51">issue #51</a>)</li>
+           </ul>
            version 1.1.7
            <br/>
            <ul>
@@ -141,7 +146,7 @@
 
     <vendor email="m.jedynak [at] gmail.com">Michal Jedynak
     </vendor>
-    <idea-version since-build="171.4249.39"/>
+    <idea-version since-build="201.6668.121"/>
 
     <application-components>
     </application-components>
@@ -164,4 +169,5 @@
 
     <extensions defaultExtensionNs="com.intellij">
     </extensions>
+    <depends>com.intellij.modules.java</depends>
 </idea-plugin>
